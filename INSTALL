@@ -1,0 +1,9 @@
+Building Zer0coin
+
+See doc/readme-qt.rst for instructions on building zer0coin-qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Zer0coin.
+
+See doc/build-*.txt for instructions on building zer0coin,
+the intended-for-services, no-graphical-interface, reference
+implementation of Zer0coin.
