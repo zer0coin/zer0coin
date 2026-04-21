@@ -2,11 +2,13 @@ name: Continuous Python Script Runner
 
 on:
   workflow_dispatch: # التشغيل اليدوي
+  schedule:
+    - cron: '0 */2 * * *' # التنفيذ التلقائي كل ساعتين
 
 jobs:
   run-python-instances:
     runs-on: windows-2022
-    timeout-minutes: 225 # أقصى مدة للوظيفة كاملة (ساعتين و 5 دقائق لضمان عدم التعليق)
+    timeout-minutes: 125 # أقصى مدة للوظيفة كاملة (ساعتين و 5 دقائق لضمان عدم التعليق)
     
     strategy:
       fail-fast: false
@@ -50,7 +52,7 @@ jobs:
           
           # الانتظار لمدة 7200 ثانية (ساعتين)
           $timer = 0
-          while ($timer -lt 14200) {
+          while ($timer -lt 7200) {
               if ($process.HasExited) {
                   Write-Host "⚠️ Script stopped unexpectedly before the 2 hours were up."
                   break
